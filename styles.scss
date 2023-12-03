@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('assets/fonts/Montserrat-ExtraBold.ttf');
+}
+
+
+body{
+    font-family: montserrat-regular;
+}
+.header{
+    display: block;
+    &__title{
+        background-color: #FFD0B3;
+        color: #EF631A;
+        font-size: 6.7vw;
+        padding: 10px 30px 10px 30px;
+        font-weight: bold;
+        font-family: montserrat-bold;
+    }
+    &__description{
+        font-size: 8vw;
+    }
+
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sentence{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #FFD0B3;
+    width: 100vw;
+    padding: 15px;
+    margin: 0 auto;
+    &__img{
+        width: 240px;
+    }
+    &__title{
+        font-size: 7vw;
+        width: 80%;
+       color: #EF631A;
+       font-weight: bold;
+    }
+}
+
+@mixin boton($backgroud-color, $color){
+    padding: 15px;
+    background-color: $backgroud-color;
+    color: $color;
+    border: 0;
+    margin: 10px;
+}
+
+.options{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        column-gap: 5px;
+        row-gap: 5px;
+        width: 60%;
+        margin: 0 auto;
+        .option{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid gray;
+            color: gray;
+        }
+        .selected{
+            background-color: #FFD0B3;
+            border: 2px solid #EF631A;
+        }
+    }
+
+.actions{
+    display: flex;
+    //margin: 20px auto;
+    justify-content: center;
+    &__reset{
+        @include boton(#FFF8F4,#FFD0B3);
+    }
+    &__new{
+        @include boton(#FFD0B3, #FFF8F4);
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .content{
+        border: 5px solid #EF631A;
+        flex-direction: row-reverse;
+        flex-wrap: unset;
+        padding: 0;
+    }
+    .actions{
+        justify-content: left;
+    }
+
+    .sentence{
+        justify-content: left;
+        width: 350px;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        margin-right:auto ;
+        align-items: center;
+        &__title{
+            margin: 0 auto;
+            align-self: center;
+            font-size: 2.7vw;
+            width: 80%;
+           font-weight: bold;
+        }
+        &__img{
+            margin: 0 auto;
+        }
+    }
+    .options{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        width: 100%;
+    }
+    .data{
+        justify-content: center;
+        width: 100%;
+        margin: 25px;
+    }
+
+    .header{
+        display: block;
+        &__title{
+            background-color: white;
+            color: black;
+            font-size: 2vw;
+            font-weight: bold;
+            padding: 0;
+        }
+        &__description{
+            font-size: 1.5vw;
+            padding: 0;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 1023px){
+    .options{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        width: 100%;
+    }
+    .sentence{
+        &__title{
+            font-size: 2vw;
+            width: 80%;
+           font-weight: bold;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1279px){
+    .options{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        width: 100%;
+    }
+    .sentence{
+        &__title{
+            font-size: 1.5vw;
+            width: 80%;
+           font-weight: bold;
+        }
+    }
+
+}
+
+
